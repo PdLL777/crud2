@@ -28,10 +28,25 @@
               </p>
             </a>
           </li>
+          
           <li class="nav-item">
             <a href="index_p.php" class="nav-link active">
               <p>
                 Ver alunos
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="add_d.php" class="nav-link active">
+              <p>
+                Adicionar Disciplinas
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="index_d.php" class="nav-link active">
+              <p>
+                Ver Disciplinas
               </p>
             </a>
           </li>

@@ -63,9 +63,9 @@
 
       <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Tabela de Alunos</h3>
+                <h3 class="card-title">Tabela de disciplinas</h3>
                 
-                <small class="float-right"><a href="add_p.php"> <button type="button" class="btn btn-block btn-primary">Add Aluno</button></a>    </small>
+                <small class="float-right"><a href="add_d.php"> <button type="button" class="btn btn-block btn-primary">Add disciplina</button></a>    </small>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -73,10 +73,8 @@
                   <thead>
                   <tr>
                     <th>CÓDIGO</th>
-                    <th>NOME</th>
-                    <th>Disciplina</th>
-                    <th>Nota1</th>
-                    <th>Nota2</th>
+                    <th>Nome da disciplina</th>
+                    <th>Carga Horária</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -90,7 +88,7 @@
                     try {
                     
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $stmt = $conn->prepare("SELECT * FROM aluno");
+                    $stmt = $conn->prepare("SELECT * FROM disciplina");
                     $stmt->execute();
                     
                     // set the resulting array to associative
@@ -100,14 +98,12 @@
                         //var_dump($v);
                         echo '<tr>';
                         echo '<td>'.$v['id'].'</td>';
-                        echo '<td>'.$v['nome'].'</td>';
-                        echo '<td>'.$v['disciplina'].'</td>';
-                        echo '<td>'.$v['nota1'].'</td>';
-                        echo '<td>'.$v['nota2'].'</td>';
+                        echo '<td>'.$v['nome_d'].'</td>';
+                        echo '<td>'.$v['c_hora'].'</td>';
                         echo '<td style="text-align:center"> 
-                              <a class="btn btn-primary btn-sm" href="vis_p.php?id='.$v['id'].'"><i class="fas fa-folder"></i></a>
-                              <a class="btn btn-info btn-sm" href="edt_p.php?id='.$v['id'].'"><i class="fas fa-pencil-alt"></i></a>                            
-                              <a class="btn btn-danger btn-sm" href="delete.php?id='.$v['id'].'" data-href="delete.php?id='.$v['id'].'" data-toggle="modal" data-target="#confirm-delete"><i class="fas fa-trash"></i></a>                                                 
+                              <a class="btn btn-primary btn-sm" href="vis_d.php?id='.$v['id'].'"><i class="fas fa-folder"></i></a>
+                              <a class="btn btn-info btn-sm" href="edt_d.php?id='.$v['id'].'"><i class="fas fa-pencil-alt"></i></a>                            
+                              <a class="btn btn-danger btn-sm" href="delete_d.php?id='.$v['id'].'" data-href="delete_d.php?id='.$v['id'].'" data-toggle="modal" data-target="#confirm-delete"><i class="fas fa-trash"></i></a>                                                 
                               </td>';
                         echo '</tr>';
 
@@ -153,7 +149,7 @@
        
       </div>
       <div class="modal-body">
-        <p>Tem certeza que deseja excluir esse aluno?</p>
+        <p>Tem certeza que deseja excluir essa disciplina?</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-light" data-dismiss="modal">Cancelar</button>

@@ -48,7 +48,7 @@
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form role="form" name="form_produto" method="POST" action="cad_p.php" >
+          <form role="form" name="form_a" method="POST" action="cad_p.php" >
             <div class="card-body">
               <div class="form-group">
                 <label for="nome">Nome do Aluno</label>
